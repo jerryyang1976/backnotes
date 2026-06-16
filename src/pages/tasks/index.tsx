@@ -11,6 +11,7 @@ import { toast } from '@/components/ui/toast'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Plus, Pencil, Trash2, Check, Circle, Clock, Sparkles } from 'lucide-react-taro'
 import Taro from '@tarojs/taro'
+import CustomTabBar from '@/components/CustomTabBar'
 
 const TasksPage = () => {
   const [tasks, setTasks] = useState<Task[]>([])
@@ -386,6 +387,7 @@ const TasksPage = () => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+      <CustomTabBar />
     </View>
   )
 }
