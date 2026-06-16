@@ -31,39 +31,38 @@ export default function CustomTabBar() {
   }
 
   return (
-    <View
-      style={{
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        right: 0,
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        height: '50px',
-        backgroundColor: '#ffffff',
-        borderTop: '1px solid #e5e7eb',
-        zIndex: 1000
-      }}
-    >
+    <View style={{
+      position: 'fixed',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      height: '50px',
+      backgroundColor: '#ffffff',
+      borderTop: '1px solid #e5e7eb',
+      zIndex: 1000
+    }}>
       {tabs.map((tab, index) => {
         const isActive = current === index
         return (
-          <View
-            key={tab.pagePath}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flex: 1,
-              cursor: 'pointer'
-            }}
-            onClick={() => switchTab(index)}
-          >
+          <View key={tab.pagePath} style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flex: 1,
+            cursor: 'pointer'
+          }} onClick={() => switchTab(index)}>
             <Text style={{ fontSize: '24px' }}>{tab.emoji}</Text>
-            <Text
-              style={{
-                fontSize: '12px',
-                ma
+            <Text style={{ fontSize: '12px', marginTop: '2px', color: isActive ? '#0ea5e9' : '#6b7280' }}>
+              {tab.text}
+            </Text>
+          </View>
+        )
+      })}
+    </View>
+  )
+}
