@@ -9,6 +9,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { toast } from '@/components/ui/toast'
 import { Search, Plus, Pencil, Trash2 } from 'lucide-react-taro'
 import Taro from '@tarojs/taro'
+import CustomTabBar from '@/components/CustomTabBar'
 
 const MemosPage = () => {
   const [memos, setMemos] = useState<Memo[]>([])
@@ -232,6 +233,7 @@ const MemosPage = () => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+      <CustomTabBar />
     </View>
   )
 }
