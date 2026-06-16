@@ -19,7 +19,6 @@ export default function CustomTabBar() {
   const [current, setCurrent] = useState(0)
 
   useEffect(() => {
-    // 获取当前页面路径
     const path = Taro.getCurrentInstance().router?.path || ''
     const index = tabs.findIndex(tab => tab.pagePath === path)
     if (index !== -1) {
