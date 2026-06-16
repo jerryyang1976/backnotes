@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { toast } from '@/components/ui/toast'
 import { FileText, Check, Clock, TrendingUp } from 'lucide-react-taro'
+import CustomTabBar from '@/components/CustomTabBar'
 
 interface Stats {
   totalMemos: number
@@ -164,6 +165,7 @@ const ProfilePage = () => {
           数据存储：Supabase 云端数据库
         </Text>
       </View>
+      <CustomTabBar />
     </View>
   )
 }
