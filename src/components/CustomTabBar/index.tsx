@@ -1,18 +1,17 @@
 import { View, Text } from '@tarojs/components'
 import Taro from '@tarojs/taro'
-import { FileText, Clipboard, User } from 'lucide-react-taro'
 import { useState, useEffect } from 'react'
 
 interface TabItem {
   pagePath: string
   text: string
-  icon: string
+  emoji: string
 }
 
 const tabs: TabItem[] = [
-  { pagePath: '/pages/memos/index', text: '备忘', icon: 'file-text' },
-  { pagePath: '/pages/tasks/index', text: '任务', icon: 'clipboard' },
-  { pagePath: '/pages/profile/index', text: '我的', icon: 'user' }
+  { pagePath: '/pages/memos/index', text: '备忘', emoji: '📝' },
+  { pagePath: '/pages/tasks/index', text: '任务', emoji: '✅' },
+  { pagePath: '/pages/profile/index', text: '我的', emoji: '👤' }
 ]
 
 export default function CustomTabBar() {
@@ -29,22 +28,6 @@ export default function CustomTabBar() {
   const switchTab = (index: number) => {
     setCurrent(index)
     Taro.switchTab({ url: tabs[index].pagePath })
-  }
-
-  const renderIcon = (icon: string, isActive: boolean) => {
-    const color = isActive ? '#0ea5e9' : '#6b7280'
-    const size = 24
-
-    switch (icon) {
-      case 'file-text':
-        return <FileText size={size} color={color} />
-      case 'clipboard':
-        return <Clipboard size={size} color={color} />
-      case 'user':
-        return <User size={size} color={color} />
-      default:
-        return null
-    }
   }
 
   return (
@@ -79,19 +62,8 @@ export default function CustomTabBar() {
             }}
             onClick={() => switchTab(index)}
           >
-            {renderIcon(tab.icon, isActive)}
+            <Text style={{ fontSize: '24px' }}>{tab.emoji}</Text>
             <Text
               style={{
                 fontSize: '12px',
-                marginTop: '4px',
-                color: isActive ? '#0ea5e9' : '#6b7280'
-              }}
-            >
-              {tab.text}
-            </Text>
-          </View>
-        )
-      })}
-    </View>
-  )
-}
+                ma
