@@ -11,6 +11,7 @@ export default defineAppConfig({
     navigationBarTextStyle: 'black'
   },
   tabBar: {
+    custom: true,
     color: '#6b7280',
     selectedColor: '#0ea5e9',
     backgroundColor: '#ffffff',
@@ -18,21 +19,15 @@ export default defineAppConfig({
     list: [
       {
         pagePath: 'pages/memos/index',
-        text: '备忘',
-        iconPath: './assets/tabbar/file-text.png',
-        selectedIconPath: './assets/tabbar/file-text-active.png'
+        text: '备忘'
       },
       {
         pagePath: 'pages/tasks/index',
-        text: '任务',
-        iconPath: './assets/tabbar/check-square.png',
-        selectedIconPath: './assets/tabbar/check-square-active.png'
+        text: '任务'
       },
       {
         pagePath: 'pages/profile/index',
-        text: '我的',
-        iconPath: './assets/tabbar/user.png',
-        selectedIconPath: './assets/tabbar/user-active.png'
+        text: '我的'
       }
     ]
   }
