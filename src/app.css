@@ -158,3 +158,15 @@ image {
   background-color: var(--selection);
   color: var(--selection-foreground);
 }
+/* 强制 H5 端 Input 和 Textarea 背景透明 */
+textarea,
+input {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.taro-textarea,
+.taro-input {
+  background-color: transparent !important;
+  background: transparent !important;
+}
