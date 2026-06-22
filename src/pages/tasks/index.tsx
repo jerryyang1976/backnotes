@@ -175,21 +175,21 @@ const TasksPage = () => {
   }
 
   return (
-    <View className="flex flex-col h-full bg-gray-50">
+    <View className="flex flex-col h-full" style={{ backgroundColor: '#faf6f2' }}>
       {/* Header */}
-      <View className="flex items-center justify-between px-4 py-3 bg-sky-500">
-        <Text className="block text-lg font-semibold text-white">计划任务</Text>
+      <View className="flex items-center justify-between px-4 py-3" style={{ backgroundColor: '#f5ebe0' }}>
+        <Text className="block text-lg font-semibold" style={{ color: '#5a4a3a' }}>待办任务</Text>
         <View className="flex items-center gap-2">
           <Button 
             size="sm" 
             variant="secondary"
             onClick={handleGenerateTasks}
           >
-            <Sparkles size={16} color="#0ea5e9" />
+            <Sparkles size={16} color="#b45309" />
             <Text className="block ml-1 text-sm">AI生成</Text>
           </Button>
           <Button size="sm" variant="secondary" onClick={handleAddTask}>
-            <Plus size={16} color="#0ea5e9" />
+            <Plus size={16} color="#b45309" />
           </Button>
         </View>
       </View>
@@ -223,7 +223,7 @@ const TasksPage = () => {
                   <Card key={task.id}>
                     <CardContent className="p-4">
                       <View className="flex items-start gap-3">
-                        <Text className="block text-sky-500 font-bold text-sm shrink-0 mt-1">{`#${index + 1}`}</Text>
+                        <Text className="block text-amber-700 font-bold text-sm shrink-0 mt-1">{`#${index + 1}`}</Text>
                         <View className="flex items-center justify-center w-6 h-6 shrink-0">
                           <Button 
                             size="icon" 
@@ -345,9 +345,9 @@ const TasksPage = () => {
           <View className="py-4 flex flex-col gap-4">
             <View>
               <Text className="block text-sm font-medium text-gray-700 mb-2">任务标题</Text>
-              <View className="bg-gray-50 rounded-xl px-4 py-3">
+              <View className="rounded-xl px-4 py-3 border border-gray-200">
                 <Input
-                  className="w-full bg-transparent text-sm"
+                  style={{ width: '100%', backgroundColor: 'transparent', border: 'none', outline: 'none', fontSize: '14px' }}
                   placeholder="输入任务标题..."
                   value={taskTitle}
                   onInput={(e) => setTaskTitle(e.detail.value)}
@@ -356,9 +356,9 @@ const TasksPage = () => {
             </View>
             <View>
               <Text className="block text-sm font-medium text-gray-700 mb-2">任务描述（可选）</Text>
-              <View className="bg-gray-50 rounded-xl p-4">
+              <View className="rounded-xl p-4 border border-gray-200">
                 <Textarea
-                  style={{ width: '100%', minHeight: '80px', backgroundColor: 'transparent' }}
+                  style={{ width: '100%', minHeight: '80px', backgroundColor: 'transparent', border: 'none', outline: 'none' }}
                   placeholder="输入任务描述..."
                   value={taskDescription}
                   onInput={(e) => setTaskDescription(e.detail.value)}
@@ -367,9 +367,9 @@ const TasksPage = () => {
             </View>
             <View>
               <Text className="block text-sm font-medium text-gray-700 mb-2">截止时间（可选）</Text>
-              <View className="bg-gray-50 rounded-xl px-4 py-3">
+              <View className="rounded-xl px-4 py-3 border border-gray-200">
                 <Input
-                  className="w-full bg-transparent text-sm"
+                  style={{ width: '100%', backgroundColor: 'transparent', border: 'none', outline: 'none', fontSize: '14px' }}
                   placeholder="输入截止日期（如：2024-12-20）"
                   value={taskDeadline}
                   onInput={(e) => setTaskDeadline(e.detail.value)}

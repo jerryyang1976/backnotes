@@ -123,11 +123,23 @@ const MemosPage = () => {
   }
 
   return (
-    <View className="min-h-screen bg-gray-50 pb-20">
+    <View className="min-h-screen pb-20" style={{ backgroundColor: '#faf6f2' }}>
+      {/* 导航栏下方覆盖区域 */}
+      <View 
+        style={{ 
+          position: 'fixed', 
+          top: 0, 
+          left: 0, 
+          right: 0, 
+          height: '44px', 
+          backgroundColor: '#faf6f2', 
+          zIndex: 1 
+        }} 
+      />
       {/* 顶部搜索栏 */}
-      <View className="bg-white px-4 py-3 border-b border-gray-200">
-        <View className="flex items-center gap-2 bg-gray-100 rounded-lg px-3 py-2">
-          <Search size={18} color="#6b7280" />
+      <View className="px-4 py-3" style={{ backgroundColor: '#f5ebe0' }}>
+        <View className="flex items-center gap-2 rounded-lg px-3 py-2" style={{ backgroundColor: '#ffffff' }}>
+          <Search size={18} color="#7a6a5a" />
           <Input
             className="w-full bg-transparent text-sm"
             placeholder="搜索备忘..."
@@ -138,7 +150,7 @@ const MemosPage = () => {
       </View>
 
       {/* 备忘列表 */}
-      <View className="px-4 py-4">
+      <View className="px-4 py-4" style={{ backgroundColor: '#faf6f2' }}>
         {isLoading ? (
           <View className="text-center py-8">
             <Text className="block text-gray-500">加载中...</Text>
@@ -156,7 +168,7 @@ const MemosPage = () => {
                 <View className="flex justify-between items-start gap-3">
                   <View className="flex-1">
                     <View className="flex items-start gap-2">
-                      <Text className="block text-sky-500 font-bold text-sm shrink-0">{`#${index + 1}`}</Text>
+                      <Text className="block text-amber-700 font-bold text-sm shrink-0">{`#${index + 1}`}</Text>
                       <Text className="block text-gray-700 text-sm leading-relaxed flex-1">
                         {memo.content}
                       </Text>
@@ -214,9 +226,10 @@ const MemosPage = () => {
             <DialogTitle>{editMemo ? '编辑备忘' : '添加备忘'}</DialogTitle>
           </DialogHeader>
           <View className="py-4">
-            <View className="bg-gray-50 rounded-xl p-4">
+            <View className="rounded-xl p-4 border border-gray-200">
               <Textarea
-                style={{ width: '100%', minHeight: '100px', backgroundColor: 'transparent' }}
+                style={{ width: '100%', minHeight: '100px', backgroundColor: 'transparent', border: 'none', outline: 'none' }}
+                placeholderStyle="color: #9ca3af"
                 placeholder="输入备忘内容..."
                 value={memoContent}
                 onInput={(e) => setMemoContent(e.detail.value)}

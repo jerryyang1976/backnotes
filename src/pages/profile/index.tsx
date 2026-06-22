@@ -55,26 +55,26 @@ const ProfilePage = () => {
     : 0
 
   return (
-    <View className="min-h-screen bg-gray-50 px-4 py-6">
+    <View className="min-h-screen px-4 py-6" style={{ backgroundColor: '#faf6f2' }}>
       {/* 统计卡片 */}
-      <Card className="mb-4 shadow-sm">
+      <Card className="mb-4 shadow-sm" style={{ backgroundColor: '#fdfaf7' }}>
         <CardContent className="p-6">
           <View className="flex items-center justify-center gap-4">
             <View className="text-center">
-              <Text className="block text-3xl font-bold text-sky-500">
+              <Text className="block text-3xl font-bold text-amber-700">
                 {stats.totalMemos}
               </Text>
               <Text className="block text-sm text-gray-500 mt-1">
-                备忘记录
+                笔记记录
               </Text>
             </View>
             <View className="w-px h-12 bg-gray-200" />
             <View className="text-center">
-              <Text className="block text-3xl font-bold text-sky-500">
+              <Text className="block text-3xl font-bold text-amber-700">
                 {stats.totalTasks}
               </Text>
               <Text className="block text-sm text-gray-500 mt-1">
-                计划任务
+                待办任务
               </Text>
             </View>
           </View>
@@ -83,15 +83,15 @@ const ProfilePage = () => {
 
       {/* 详细统计 */}
       <View className="flex flex-col gap-3">
-        <Card className="shadow-sm">
+        <Card className="shadow-sm" style={{ backgroundColor: '#fdfaf7' }}>
           <CardContent className="p-4">
             <View className="flex items-center justify-between">
               <View className="flex items-center gap-3">
-                <View className="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center">
-                  <FileText size={20} color="#0ea5e9" />
+                <View className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                  <FileText size={20} color="#b45309" />
                 </View>
                 <Text className="block text-base font-medium text-gray-700">
-                  备忘总数
+                  笔记总数
                 </Text>
               </View>
               <Badge variant="secondary">
@@ -101,12 +101,12 @@ const ProfilePage = () => {
           </CardContent>
         </Card>
 
-        <Card className="shadow-sm">
+        <Card className="shadow-sm" style={{ backgroundColor: '#fdfaf7' }}>
           <CardContent className="p-4">
             <View className="flex items-center justify-between">
               <View className="flex items-center gap-3">
-                <View className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
-                  <Clock size={20} color="#6b7280" />
+                <View className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                  <Clock size={20} color="#b45309" />
                 </View>
                 <Text className="block text-base font-medium text-gray-700">
                   待办任务
@@ -119,18 +119,18 @@ const ProfilePage = () => {
           </CardContent>
         </Card>
 
-        <Card className="shadow-sm">
+        <Card className="shadow-sm" style={{ backgroundColor: '#fdfaf7' }}>
           <CardContent className="p-4">
             <View className="flex items-center justify-between">
               <View className="flex items-center gap-3">
-                <View className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                  <Check size={20} color="#22c55e" />
+                <View className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                  <Check size={20} color="#b45309" />
                 </View>
                 <Text className="block text-base font-medium text-gray-700">
                   已完成
                 </Text>
               </View>
-              <Badge variant="secondary" className="bg-green-100 text-green-700">
+              <Badge variant="secondary" className="bg-amber-100 text-amber-700">
                 <Text className="block text-sm">{stats.completedTasks}</Text>
               </Badge>
             </View>
