@@ -132,7 +132,7 @@ const MemosPage = () => {
           left: 0, 
           right: 0, 
           height: '44px', 
-          backgroundColor: '#faf6f2', 
+          backgroundColor: '#f5ebe0', 
           zIndex: 1 
         }} 
       />
