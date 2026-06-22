@@ -101,11 +101,17 @@
   "engines": {
     "pnpm": ">=9.0.0"
   },
-  "pnpm": {
-    "patchedDependencies": {
-      "@tarojs/plugin-mini-ci@4.1.9": "patches/@tarojs__plugin-mini-ci@4.1.9.patch"
-    }
+   "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "pnpm": ">=9.0.0"
   },
+  "templateInfo": {
+    "name": "default",
+    "typescript": true,
+    "css": "Less",
+    "framework": "React"
+  }
+}
   "templateInfo": {
     "name": "default",
     "typescript": true,
